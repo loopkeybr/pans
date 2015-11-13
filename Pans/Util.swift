@@ -32,4 +32,49 @@ extension UIViewController
         alert.addAction(okAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
+
+}
+
+extension UIImage
+{
+    func resizeToLargestSize(size: CGFloat) -> UIImage
+    {
+        let factor = (self.size.height > self.size.width) ? (size / self.size.height) : (size / self.size.width)
+        let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(factor, factor))
+        
+        UIGraphicsBeginImageContextWithOptions(size, true, 1.0)
+        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return scaledImage
+    }
+}
+
+class SnapCell : PFTableViewCell
+{
+    @IBOutlet weak var snapImage: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    func setDate(date: NSDate?)
+    {
+        if let dt = date {
+            let formatter = NSDateFormatter()
+            formatter.setLocalizedDateFormatFromTemplate("EEEE',' dd/MM/yyyy hh:mm a")
+            dateLabel.text = formatter.stringFromDate(dt)
+        }
+    }
+    
+    func setReceived()
+    {
+        snapImage.image = UIImage(named: "arrow_down")
+    }
+    
+    func setSent()
+    {
+        snapImage.image = UIImage(named: "arrow_up")
+    }
+    
 }

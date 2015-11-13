@@ -42,7 +42,7 @@ class ProfileViewController : FormViewController
         
         if let user = self.user {
             fillUserInfo()
-            if user.isNew {
+            if user.isNew && user.email == nil {
                 SwiftOverlays.showBlockingWaitOverlay()
                 // Get user information from Facebook
                 let requestParams = ["fields" : "name,email"]

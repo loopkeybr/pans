@@ -18,6 +18,8 @@
 		35B162B01BF3C1120039BCC2 /* PansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B162AF1BF3C1120039BCC2 /* PansTests.swift */; };
 		35B162BB1BF3C1120039BCC2 /* PansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B162BA1BF3C1120039BCC2 /* PansUITests.swift */; };
 		35B162CD1BF3D1300039BCC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B162CC1BF3D1300039BCC2 /* MainViewController.swift */; };
+		35B2CA0B1BF511B9002E4F9A /* SendSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2CA0A1BF511B9002E4F9A /* SendSnapViewController.swift */; };
+		35B2CA0D1BF5237A002E4F9A /* DisplayImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2CA0C1BF5237A002E4F9A /* DisplayImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		35B162BC1BF3C1120039BCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B162C81BF3C4060039BCC2 /* Pans-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pans-Bridging-Header.h"; sourceTree = "<group>"; };
 		35B162CC1BF3D1300039BCC2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		35B2CA0A1BF511B9002E4F9A /* SendSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSnapViewController.swift; sourceTree = "<group>"; };
+		35B2CA0C1BF5237A002E4F9A /* DisplayImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayImageViewController.swift; sourceTree = "<group>"; };
 		AEA92BA97327476EAD8AE7FC /* Pods_Pans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,8 @@
 				35B162CC1BF3D1300039BCC2 /* MainViewController.swift */,
 				350335BE1BF3D2B7004D2682 /* ProfileViewController.swift */,
 				350335C01BF3D96F004D2682 /* Util.swift */,
+				35B2CA0A1BF511B9002E4F9A /* SendSnapViewController.swift */,
+				35B2CA0C1BF5237A002E4F9A /* DisplayImageViewController.swift */,
 				35B1629E1BF3C1120039BCC2 /* Main.storyboard */,
 				35B162A11BF3C1120039BCC2 /* Assets.xcassets */,
 				35B162A31BF3C1120039BCC2 /* LaunchScreen.storyboard */,
@@ -231,6 +237,12 @@
 				TargetAttributes = {
 					35B162961BF3C1120039BCC2 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 86MG9KVY7T;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					35B162AA1BF3C1120039BCC2 = {
 						CreatedOnToolsVersion = 7.1;
@@ -343,9 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B162CD1BF3D1300039BCC2 /* MainViewController.swift in Sources */,
+				35B2CA0D1BF5237A002E4F9A /* DisplayImageViewController.swift in Sources */,
 				35B1629D1BF3C1120039BCC2 /* LoginViewController.swift in Sources */,
 				350335C11BF3D96F004D2682 /* Util.swift in Sources */,
 				350335BF1BF3D2B7004D2682 /* ProfileViewController.swift in Sources */,
+				35B2CA0B1BF511B9002E4F9A /* SendSnapViewController.swift in Sources */,
 				35B1629B1BF3C1120039BCC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,11 +504,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "Pods/**";
 				INFOPLIST_FILE = Pans/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loopce.Pans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pans/Pans-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -506,11 +523,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "Pods/**";
 				INFOPLIST_FILE = Pans/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loopce.Pans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pans/Pans-Bridging-Header.h";
 			};
 			name = Release;

@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Pans": {
+      "applicationId": "31GewRO9J2WwetLiXMuJgykdEy9H5A5fokQiiEJN"
+    },
+    "_default": {
+      "link": "Pans"
+    }
+  }
+}

@@ -32,7 +32,10 @@ class LoginViewController: UIViewController {
     {
         PFFacebookUtils.logInInBackgroundWithReadPermissions(["email", "user_about_me", "public_profile", "user_friends"]) {
             (userOptional: PFUser?, errorOptional: NSError?) -> Void in
-            if userOptional != nil {
+            if let user = userOptional {
+                let installation = PFInstallation.currentInstallation()
+                installation.setObject(user, forKey: "user")
+                installation.saveInBackground()
                 self.performSegueWithIdentifier("login", sender: self)
             } else if errorOptional != nil {
                 NSLog("Failed to login")
